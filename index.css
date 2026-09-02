@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h2>Music Player</h2>
+
+            <label for="musicFile" class="add-btn">
+                + Add Songs
+            </label>
+
+            <input type="file" id="musicFile" accept="audio/*" multiple>
+        </header>
+
+        <div class="main">
+
+            <div class="sidebar">
+                <h3>Menu</h3>
+
+                <button class="menu active" id="allSongsBtn">
+                    🎵 All Songs
+                </button>
+
+                <button class="menu" id="favoriteBtn">
+                    ❤️ Favorites
+                </button>
+
+                <button class="menu" id="recentBtn">
+                    🕘 Recently Added
+                </button>
+
+                <button class="menu" id="darkBtn">
+                    🌙 Dark Mode
+                </button>
+            </div>
+
+            <div class="content">
+
+                <div class="welcome">
+                    <p>YOUR MUSIC</p>
+                    <h1>Listen to your<br>favorite tracks.</h1>
+                    <span>Add your music files and start listening.</span>
+                </div>
+
+                <div class="top">
+                    <div>
+                        <h2 id="heading">All Songs</h2>
+                        <p id="subHeading">Your complete music library</p>
+                    </div>
+
+                    <input type="text" id="search" placeholder="Search songs...">
+                </div>
+
+                <div id="songList"></div>
+
+                <div id="empty" class="empty">
+                    <div>🎵</div>
+                    <h3>No songs added</h3>
+                    <p>Add an audio file to start using the music player.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="player">
+
+            <div class="song-info">
+                <div class="cover">♪</div>
+
+                <div>
+                    <h4 id="songTitle">No song selected</h4>
+                    <p id="artist">Add a song to play</p>
+                </div>
+
+                <button id="likeBtn">♡</button>
+            </div>
+
+            <div class="controls">
+
+                <div class="buttons">
+                    <button id="shuffle">🔀</button>
+                    <button id="previous">⏮</button>
+                    <button id="play">▶</button>
+                    <button id="next">⏭</button>
+                    <button id="repeat">🔁</button>
+                </div>
+
+                <div class="progress">
+
+                    <span id="current">0:00</span>
+
+                    <input type="range" id="progressBar"
+                        min="0" max="100" value="0">
+
+                    <span id="total">0:00</span>
+
+                </div>
+
+            </div>
+
+            <div class="volume">
+                <span id="mute">🔊</span>
+
+                <input type="range" id="volumeBar"
+                    min="0" max="1" step="0.01" value="0.8">
+            </div>
+
+        </div>
+
+    </div>
+
+    <audio id="audio"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
